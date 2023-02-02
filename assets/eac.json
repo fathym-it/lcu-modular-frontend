@@ -29,7 +29,7 @@
       },
       "LowCodeUnit": {
         "SourceControlLookup": "fork|github://fathym-it/public-web-react",
-        "Version": "latest",
+        "Build": "latest",
         "Path": "lcu-github-artifacts-release.yml",
         "Type": "GitHub"
       },
@@ -49,7 +49,7 @@
       },
       "LowCodeUnit": {
         "SourceControlLookup": "fork|github://fathym-it/gatsby-starter-blog",
-        "Version": "latest",
+        "Build": "latest",
         "Path": "lcu-github-artifacts-release.yml",
         "Type": "GitHub"
       },
@@ -69,7 +69,7 @@
       },
       "LowCodeUnit": {
         "SourceControlLookup": "@fork|github://fathym-it/public-web-docusaurus-docs-only",
-        "Version": "latest",
+        "Build": "latest",
         "Path": "lcu-github-artifacts-release.yml",
         "Type": "GitHub"
       },
@@ -88,7 +88,7 @@
           "Output": "./public",
           "Type": "GitHub",
           "BuildCommand": "npm run build",
-          "InstallCommand": "npm ci",
+          "InstallCommand": "npm i",
           "NPMRegistry": "https://registry.npmjs.org/"
         },
         "react-build-release": {
@@ -123,8 +123,8 @@
       "Sources": {
         "fork|github://fathym-it/gatsby-starter-blog": {
           "DevOpsActionTriggerLookups": ["github-artifacts-release-gatsby"],
-          "Branches": ["main"],
-          "MainBranch": "main",
+          "Branches": ["master"],
+          "MainBranch": "master",
           "Organization": "fathym-it",
           "Repository": "gatsby-starter-blog",
           "Name": "github://fathym-it/gatsby-starter-blog",
