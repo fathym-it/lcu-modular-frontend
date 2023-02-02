@@ -28,8 +28,9 @@
         "PathRegex": "/admin.*"
       },
       "LowCodeUnit": {
-        "Package": "fork|github://fathym-it/public-web-react",
+        "SourceControlLookup": "fork|github://fathym-it/public-web-react",
         "Version": "latest",
+        "Path": "lcu-github-artifacts-release.yml",
         "Type": "GitHub"
       },
       "Processor": {
@@ -47,8 +48,9 @@
         "PathRegex": "/blog.*"
       },
       "LowCodeUnit": {
-        "Package": "fork|github://fathym-it/gatsby-starter-blog",
+        "SourceControlLookup": "fork|github://fathym-it/gatsby-starter-blog",
         "Version": "latest",
+        "Path": "lcu-github-artifacts-release.yml",
         "Type": "GitHub"
       },
       "Processor": {
@@ -66,8 +68,9 @@
         "PathRegex": "/docs.*"
       },
       "LowCodeUnit": {
-        "Package": "@fork|github://fathym-it/public-web-docusaurus-docs-only",
+        "SourceControlLookup": "@fork|github://fathym-it/public-web-docusaurus-docs-only",
         "Version": "latest",
+        "Path": "lcu-github-artifacts-release.yml",
         "Type": "GitHub"
       },
       "Processor": {
@@ -124,6 +127,7 @@
           "MainBranch": "main",
           "Organization": "fathym-it",
           "Repository": "gatsby-starter-blog",
+          "Name": "github://fathym-it/gatsby-starter-blog",
           "Type": "GitHub"
         },
         "fork|github://fathym-it/public-web-react": {
@@ -132,6 +136,7 @@
           "MainBranch": "main",
           "Organization": "fathym-it",
           "Repository": "public-web-react",
+          "Name": "github://fathym-it/public-web-react",
           "Type": "GitHub"
         },
         "fork|github://fathym-it/public-web-docusaurus-docs-only": {
@@ -140,6 +145,7 @@
           "MainBranch": "main",
           "Organization": "fathym-it",
           "Repository": "public-web-docusaurus-docs-only",
+          "Name": "github://fathym-it/public-web-docusaurus-docs-only",
           "Type": "GitHub"
         }
       }
