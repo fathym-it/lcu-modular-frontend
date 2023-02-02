@@ -1,6 +1,6 @@
 {
   "name": "@fathym-it/lcu-modular-frontend",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "@fathym-it/lcu-modular-frontend",
   "author": "Fathym, Inc",
   "main": "lcu.json",
