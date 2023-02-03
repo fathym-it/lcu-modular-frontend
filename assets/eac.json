@@ -68,7 +68,7 @@
         "PathRegex": "/docs.*"
       },
       "LowCodeUnit": {
-        "SourceControlLookup": "@fork|github://fathym-it/public-web-docusaurus-docs-only",
+        "SourceControlLookup": "fork|github://fathym-it/public-web-docusaurus-docs-only",
         "Build": "latest",
         "Path": "lcu-github-artifacts-release.yml",
         "Type": "GitHub"
