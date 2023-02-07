@@ -2,11 +2,8 @@
   "Package": {
     "Name": "Modular Frontend",
     "Description": "A modular frontend example using Plasmic, Gatsby, Docusaurus and React. See how to use routing to seamlessly deploy different tech stacks on the one domain.",
-    "Button": "Launch",
-    "Image": "https://www.fathym.com/assets/images/logo.png",
-    "PreviewImage": "https://www.fathym.com/assets/images/logo.png",
-    "SuccessType": "Project"
-  },
-  "EaC": "./assets/eac.json",
-  "Parameters": "./assets/parameters.json"
+    "Image": "https://www.fathym.com/img/microfe.png",
+    "PreviewImage": "https://www.fathym.com/assets/images/MFERPlasmicGatsbyDocuReact.png",
+    "UsesGit": true
+  }
 }
