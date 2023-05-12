@@ -108,14 +108,14 @@
             "InstallCommand": "npm i",
             "NPMRegistry": "https://registry.npmjs.org/"
           },
-          "react-build-release": {
-            "Type": "GitHubArtifact",
-            "Details": {
-              "Name": "React Build/Release",
-              "Output": "./build",
-              "BuildCommand": "npm run build",
-              "InstallCommand": "npm ci",
-              "NPMRegistry": "https://registry.npmjs.org/"
+        "react-build-release": {
+          "Type": "GitHubArtifact",
+          "Details": {
+            "Name": "React Build/Release",
+            "Output": "./build",
+            "BuildCommand": "npm run build",
+            "InstallCommand": "npm ci",
+            "NPMRegistry": "https://registry.npmjs.org/"
             }
           }
         }
@@ -131,14 +131,14 @@
               "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
             ]
           },
-          "github-artifacts-release-react": {
-            "ArtifactLookups": ["react-build-release"],
-            "Details": {
-              "Name": "GitHub Artifacts - Release - React",
-              "Path": "lcu-github-artifacts-release.yml",
-              "Templates": [
-                "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
-                "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+        "github-artifacts-release-react": {
+          "ArtifactLookups": ["react-build-release"],
+          "Details": {
+            "Name": "GitHub Artifacts - Release - React",
+            "Path": "lcu-github-artifacts-release.yml",
+            "Templates": [
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
               ]
             }
           }
