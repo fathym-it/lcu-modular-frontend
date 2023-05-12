@@ -107,7 +107,8 @@
             "BuildCommand": "npm run build",
             "InstallCommand": "npm i",
             "NPMRegistry": "https://registry.npmjs.org/"
-          },
+          }
+        },
         "react-build-release": {
           "Type": "GitHubArtifact",
           "Details": {
@@ -118,8 +119,7 @@
             "NPMRegistry": "https://registry.npmjs.org/"
           }
         }
-      }
-    },
+      },
       "DevOpsActions": {
         "github-artifacts-release-gatsby": {
           "ArtifactLookups": ["gatsby-build-release"],
@@ -131,6 +131,7 @@
               "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
             ]
           },
+        }
         "github-artifacts-release-react": {
           "ArtifactLookups": ["react-build-release"],
           "Details": {
@@ -142,8 +143,7 @@
             ]
           }
         }
-      }
-    },
+      },
       "Sources": {
         "fork|github://fathym-it/gatsby-starter-blog": {
           "DevOpsActionTriggerLookups": ["github-artifacts-release-gatsby"],
