@@ -130,8 +130,8 @@
               "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
               "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
             ]
-          },
-        }
+          }
+        },
         "github-artifacts-release-react": {
           "ArtifactLookups": ["react-build-release"],
           "Details": {
