@@ -1,0 +1,194 @@
+{
+  "Applications": {
+    "{{$1}}-micro-frontend-starter-home-page": {
+      "Details": {
+        "Description": "The public site being used as the home page.",
+        "Name": "Public Site"
+      },
+      "LookupConfig": {
+        "PathRegex": "/.*"
+      },
+      "Package": {
+        "Details": {
+          "Package": "@fathym-it/micro-frontend-starter-home-page",
+          "Version": "latest"
+        },
+        "Type": "NPMLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    },
+    "{{$2}}-public-web-react": {
+      "Details": {
+        "Description": "A basic starting point for sites built with React.",
+        "Name": "React Quickstart Project - Backend Admin"
+      },
+      "LookupConfig": {
+        "PathRegex": "/admin.*"
+      },
+      "Package": {
+        "Details": {
+          "Build": "latest",
+          "Path": "lcu-github-artifacts-release.yml"
+        },
+        "SourceControlLookup": "github://{{ORGANIZATION}}/public-web-react",
+        "Type": "GitHubLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/admin",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    },
+    "{{$3}}-gatsby-starter-blog": {
+      "Details": {
+        "Description": "A basic starting point for blogs built with Gatsby.",
+        "Name": "Blog Starter with Gatsby - Forked Recipe"
+      },
+      "LookupConfig": {
+        "PathRegex": "/blog.*"
+      },
+      "Package": {
+        "Details": {
+          "Build": "latest",
+          "Path": "lcu-github-artifacts-release.yml"
+        },
+        "SourceControlLookup": "github://{{ORGANIZATION}}/gatsby-starter-blog",
+        "Type": "GitHubLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/blog/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    },
+    "{{$4}}-public-web-docusaurus-docs-only": {
+      "Details": {
+        "Description": "A basic starting point for sites and documentation built with Docusaurus.",
+        "Name": "Docusaurus - Documentation - Forked Recipe"
+      },
+      "LookupConfig": {
+        "PathRegex": "/docs.*"
+      },
+      "Package": {
+        "Details": {
+          "Build": "latest",
+          "Path": "lcu-github-artifacts-release.yml"
+        },
+        "SourceControlLookup": "github://{{ORGANIZATION}}/public-web-docusaurus-docs-only",
+        "Type": "GitHubLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/docs/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    }
+  },
+  "Environments": {
+    "{{EaC.PrimaryEnvironment}}": {
+      "Artifacts": {
+        "gatsby-build-release": {
+          "Type": "GitHubArtifact",
+          "Details": {
+            "Name": "Gatsby Build/Release",
+            "Output": "./public",
+            "BuildCommand": "npm run build",
+            "InstallCommand": "npm i",
+            "NPMRegistry": "https://registry.npmjs.org/"
+          },
+          "react-build-release": {
+            "Type": "GitHubArtifact",
+            "Details": {
+              "Name": "React Build/Release",
+              "Output": "./build",
+              "BuildCommand": "npm run build",
+              "InstallCommand": "npm ci",
+              "NPMRegistry": "https://registry.npmjs.org/"
+            }
+          }
+        }
+      },
+      "DevOpsActions": {
+        "github-artifacts-release-gatsby": {
+          "ArtifactLookups": ["gatsby-build-release"],
+          "Details": {
+            "Name": "GitHub Artifacts - Release - Gatsby",
+            "Path": "lcu-github-artifacts-release.yml",
+            "Templates": [
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+            ]
+          },
+          "github-artifacts-release-react": {
+            "ArtifactLookups": ["react-build-release"],
+            "Details": {
+              "Name": "GitHub Artifacts - Release - React",
+              "Path": "lcu-github-artifacts-release.yml",
+              "Templates": [
+                "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+                "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+              ]
+            }
+          }
+        }
+      },
+      "Sources": {
+        "fork|github://fathym-it/gatsby-starter-blog": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-gatsby"],
+          "Details": {
+            "Branches": ["master"],
+            "MainBranch": "master",
+            "Organization": "{{ORGANIZATION}}",
+            "Repository": "gatsby-starter-blog",
+            "Name": "github://{{ORGANIZATION}}/gatsby-starter-blog"
+          },
+          "Type": "GitHubSourceControl"
+        },
+        "fork|github://fathym-it/public-web-react": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-react"],
+          "Details": {
+            "Branches": ["main"],
+            "MainBranch": "main",
+            "Organization": "{{ORGANIZATION}}",
+            "Repository": "public-web-react",
+            "Name": "github://{{ORGANIZATION}}/public-web-react"
+          },
+          "Type": "GitHubSourceControl"
+        },
+        "fork|github://fathym-it/public-web-docusaurus-docs-only": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-react"],
+          "Details": {
+            "Branches": ["main"],
+            "MainBranch": "main",
+            "Organization": "{{ORGANIZATION}}",
+            "Repository": "public-web-docusaurus-docs-only",
+            "Name": "github://{{ORGANIZATION}}/public-web-docusaurus-docs-only"
+          },
+          "Type": "GitHubSourceControl"
+        }
+      }
+    }
+  },
+  "Projects": {
+    "{{PROJECT_LOOKUP}}": {
+      "ApplicationLookups": [
+        "{{$1}}-micro-frontend-starter-home-page",
+        "{{$2}}-public-web-react",
+        "{{$3}}-gatsby-starter-blog",
+        "{{$4}}-public-web-docusaurus-docs-only"
+      ]
+    }
+  }
+}
