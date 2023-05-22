@@ -41,7 +41,7 @@
       },
       "Processor": {
         "Details": {
-          "BaseHref": "/admin",
+          "BaseHref": "/admin/",
           "DefaultFile": "index.html"
         },
         "Type": "DFSProcessor"
