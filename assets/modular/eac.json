@@ -184,8 +184,8 @@
   "Projects": {
     "{{PROJECT_LOOKUP}}": {
       "Details": {
-        "Name": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Name}}{{Details.Name}}{{/if}}{{else}}Cool Name{{/if}}",
-        "Description": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Description}}{{Details.Description}}{{/if}}{{else}}Cool Description{{/if}}"
+        "Name": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Name}}{{Details.Name}}{{/if}}{{else}}Modular Frontend{{/if}}",
+        "Description": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Description}}{{Details.Description}}{{/if}}{{else}}A modular frontend example using Plasmic, Gatsby, Docusaurus and React. See how to use routing to seamlessly deploy different tech stacks on the one domain.{{/if}}"
       },
       "ApplicationLookups": [
         "{{$1}}-micro-frontend-starter-home-page",
