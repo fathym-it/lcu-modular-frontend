@@ -184,8 +184,8 @@
   "Projects": {
     "{{PROJECT_LOOKUP}}": {
       "Details": {
-        "Name": "{{#with (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Name}}{{Details.Name}}{{else}}Cool Name{{/if}}{{/with}}",
-        "Description": "{{#with (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Description}}{{Details.Description}}{{else}}Cool Description{{/if}}{{/with}}"
+        "Name": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Name}}{{Details.Name}}{{/if}}{{else}}Cool Name{{/if}}",
+        "Description": "{{#if (lookup EaC.Projects PROJECT_LOOKUP)}}{{#if Details.Description}}{{Details.Description}}{{/if}}{{else}}Cool Description{{/if}}"
       },
       "ApplicationLookups": [
         "{{$1}}-micro-frontend-starter-home-page",
