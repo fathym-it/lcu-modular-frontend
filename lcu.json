@@ -17,7 +17,7 @@
       "Description": "A modular frontend example using Plasmic, Gatsby, Docusaurus and React. See how to use routing to seamlessly deploy different tech stacks on the one domain.",
       "Phases": [
         {
-          "Name": "Setup Modular Frontend",
+          "Name": "Setting Up Modular Frontend Project",
           "Order": 1,
           "Asset": "modular"
         }
